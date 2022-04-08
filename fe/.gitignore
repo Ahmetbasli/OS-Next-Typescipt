@@ -1,25 +1,19 @@
 # dependencies
 /node_modules
 
-
-# testing
-
+# local env files
+.env*.local
 
 # next.js
 /.next/
 
+# testing
 
 # production
 
-
 # misc
 
-
 # debug
-
-
-# local env files
-.env*.local
 
 # vercel
 
