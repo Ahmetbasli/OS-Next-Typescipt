@@ -2,7 +2,8 @@
   "env": {
     "browser": true,
     "es2021": true,
-    "node": true
+    "node": true,
+    "jest": true
   },
   "globals": {
     "React": "readonly"
@@ -27,7 +28,8 @@
     "import/resolver": {
       "typescript": {
         "project": ["**/tsconfig.json"]
-      }
+      },
+      "import/extensions": ["never"]
     }
   },
   "rules": {
@@ -35,6 +37,18 @@
     "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
     "max-lines": ["error", 80],
     "simple-import-sort/imports": "error",
-    "simple-import-sort/exports": "error"
+    "simple-import-sort/exports": "error",
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "@typescript-eslint/no-var-requires": "off"
   }
 }
