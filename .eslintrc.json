@@ -12,6 +12,7 @@
     "airbnb",
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
+    "plugin:jest/recommended",
     "plugin:react/recommended",
     "prettier"
   ],
@@ -23,7 +24,7 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react", "simple-import-sort", "@typescript-eslint"],
+  "plugins": ["react", "simple-import-sort", "@typescript-eslint", "jest"],
   "settings": {
     "import/resolver": {
       "typescript": {
