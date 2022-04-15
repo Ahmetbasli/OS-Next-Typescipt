@@ -39,7 +39,7 @@
     "max-lines": ["error", 80],
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
-    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "import/no-extraneous-dependencies": ["error", { "packageDir": "." }],
     "import/extensions": [
       "error",
       "ignorePackages",
