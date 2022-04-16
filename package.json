@@ -59,8 +59,7 @@
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-recommended": "^7.0.0",
     "stylelint-config-sass-guidelines": "^9.0.1",
-    "stylelint-config-styled-components": "^0.1.1",
-    "stylelint-processor-styled-components": "^1.10.0"
+    "stylelint-config-styled-components": "^0.1.1"
   },
   "lint-staged": {
     "*.{js,ts,tsx}": "eslint --fix",
