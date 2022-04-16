@@ -52,6 +52,7 @@
         "tsx": "never"
       }
     ],
-    "@typescript-eslint/no-var-requires": "off"
+    "@typescript-eslint/no-var-requires": "off",
+    "testing-library/render-result-naming-convention": "off"
   }
 }

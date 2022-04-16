@@ -8,7 +8,7 @@ html,
 body {
   color: red;
   margin: 0;
-  padding: 0;;
+  padding: 0;
 }
 
 * {
