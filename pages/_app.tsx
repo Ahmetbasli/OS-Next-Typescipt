@@ -1,6 +1,7 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import theme from 'theme/default';
 
 const GlobalStyle = createGlobalStyle`
 html,
@@ -14,12 +15,6 @@ body {
   box-sizing: sborder-box;
 }
 `;
-
-const theme = {
-  colors: {
-    primary: 'red',
-  },
-};
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
