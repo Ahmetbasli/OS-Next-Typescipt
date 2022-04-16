@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Remove Package-lock file
-        run: npm package-lock.json
+        run: rm package-lock.json
       - name: Install Modules
         run: npm i
       - name: Run Tests
