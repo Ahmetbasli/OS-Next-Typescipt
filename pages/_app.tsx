@@ -12,7 +12,7 @@ body {
 }
 
 * {
-  box-sizing: sborder-box;
+  box-sizing: border-box;
 }
 `;
 
