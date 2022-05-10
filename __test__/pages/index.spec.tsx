@@ -1,11 +1,14 @@
-import { screen } from '@testing-library/react';
-import Home from 'pages/index';
+import { render, screen } from '@testing-library/react';
+import StyledApp from 'components/pages/StyledAppProps';
+import Index from 'pages/index';
 
-import renderWithThemeWrapper from './renderWithThemeWrapper';
-
-describe('Home', () => {
+describe('Index', () => {
   it('renders a heading', () => {
-    renderWithThemeWrapper(<Home />);
+    render(
+      <StyledApp>
+        <Index />
+      </StyledApp>
+    );
 
     const helloWorldElement = screen.getByText('Hello, world!');
 

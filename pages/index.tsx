@@ -6,6 +6,6 @@ const Title = styled.h1`
   text-align: center;
 `;
 
-export default function Home() {
+export default function Index() {
   return <Title>Hello, world!</Title>;
 }
