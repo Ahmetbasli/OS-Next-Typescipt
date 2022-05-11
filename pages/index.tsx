@@ -1,5 +1,5 @@
-import Title from 'styles/generic/Title';
+import HelloWorld from 'components/apps/HelloWorld';
 
 export default function Index() {
-  return <Title>Hello, world!</Title>;
+  return <HelloWorld />;
 }
