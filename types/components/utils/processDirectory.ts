@@ -1,7 +1,7 @@
 import type { NextComponentType } from 'next';
 
 type Process = {
-  Component: NextComponentType;
+  Component: any;
 };
 
 type Processes = {

@@ -1,13 +1,26 @@
 import type { FC } from 'react';
-import React from 'react';
+import React, { createContext, useMemo, useState } from 'react';
+import type Processes from 'types/components/utils/processDirectory';
 import processDirectory from 'utils/processDirectory';
 
-const processLoader: FC = () => (
-  <>
-    {Object.entries(processDirectory).map(([id, { Component }]) => (
-      <Component key={id} />
-    ))}
-  </>
-);
+type ProcessContextState = {
+  processes: Processes;
+};
 
-export default processLoader;
+export const ProcessContext = createContext<ProcessContextState>({
+  processes: {},
+});
+
+export const ProcessProvider: FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
+  const processes = useMemo(() => ({ processes: processDirectory }), []);
+
+  return (
+    <ProcessContext.Provider value={processes}>
+      {children}
+    </ProcessContext.Provider>
+  );
+};
+
+export const ProcessConsumer = ProcessContext.Consumer;
