@@ -1,5 +1,5 @@
 import MetaData from 'components/pages/MetaData';
-import StyledApp from 'components/pages/StyledAppProps';
+import StyledApp from 'components/pages/StyledApp';
 import type { AppProps } from 'next/app';
 import type { ReactElement } from 'react';
 
