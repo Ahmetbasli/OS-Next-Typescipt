@@ -1,5 +1,5 @@
 import dynamic from 'next/dynamic';
-import type Processes from 'types/components/utils/processDirectory';
+import type Processes from 'types/components/contexts/process';
 
 const processDirectory: Processes = {
   HelloWorld: {

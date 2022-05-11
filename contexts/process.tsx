@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import React, { createContext, useMemo } from 'react';
-import type Processes from 'types/components/utils/processDirectory';
+import type Processes from 'types/components/contexts/process';
 import processDirectory from 'utils/processDirectory';
 
 type ProcessContextState = {
