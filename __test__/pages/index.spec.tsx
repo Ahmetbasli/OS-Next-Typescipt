@@ -10,8 +10,6 @@ describe('Index', () => {
       </StyledApp>
     );
 
-    const helloWorldElement = screen.getByText('Hello, world!');
-
-    expect(helloWorldElement).toBeInTheDocument();
+    expect(screen.getByText('Hello, world!')).toBeInTheDocument();
   });
 });
