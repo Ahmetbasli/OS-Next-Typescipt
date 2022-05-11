@@ -1,11 +1,13 @@
 import type { NextComponentType } from 'next';
 
-type Process = {
+export type Process = {
   Component: NextComponentType;
 };
 
-type Processes = {
+export type Processes = {
   [id: string]: Process;
 };
 
-export default Processes;
+export type ProcessContextState = {
+  processes: Processes;
+};
