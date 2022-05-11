@@ -12,6 +12,10 @@
     "test": "jest",
     "test:watch": "just --watch"
   },
+  "lint-staged": {
+    "*.{js,ts,tsx}": "eslint --fix",
+    "*.{js,scss,md,ts,tsx}": "prettier --write"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Ahmetbasli/OS-NextJS-Typescript.git"
@@ -60,9 +64,5 @@
     "stylelint-config-sass-guidelines": "^9.0.1",
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-processor-styled-components": "^1.10.0"
-  },
-  "lint-staged": {
-    "*.{js,ts,tsx}": "eslint --fix",
-    "*.{js,scss,md,ts,tsx}": "prettier --write"
   }
 }
