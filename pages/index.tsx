@@ -1,5 +1,5 @@
-import processDirectory from 'utils/processDirectory';
+import ProcessLoader from 'contexts/process';
 
 export default function Index() {
-  return <processDirectory.HelloWorld.component />;
+  return <ProcessLoader />;
 }
