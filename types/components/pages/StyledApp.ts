@@ -1,14 +1,8 @@
-type theme = {
-  default: {
-    colors: {
-      primary: string;
-    };
-  };
-};
+import type { DefaultTheme } from 'styled-components';
 
 type StyledAppProps = {
   children: JSX.Element;
-  theme?: theme;
+  theme?: DefaultTheme;
 };
 
 export default StyledAppProps;
