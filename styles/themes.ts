@@ -2,12 +2,12 @@ import type { DefaultTheme } from 'styled-components';
 
 const defaultTheme: DefaultTheme = {
   colors: {
-    primary: 'red',
+    primary: 'blue',
   },
 };
 
-const theme = {
+const themes = {
   default: defaultTheme,
 };
 
-export default theme;
+export default themes;
