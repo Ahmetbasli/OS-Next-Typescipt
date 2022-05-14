@@ -2,7 +2,8 @@ import type { DefaultTheme } from 'styled-components';
 
 const defaultTheme: DefaultTheme = {
   colors: {
-    primary: 'blue',
+    primary: '#008000',
+    windowBg: '#808080',
   },
 };
 
