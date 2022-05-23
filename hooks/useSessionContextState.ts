@@ -1,6 +1,6 @@
 import type { SessionContextState } from 'types/contexts/Session';
 
 const useProcessContextState = (): SessionContextState => ({
-  theme: undefined, // TODO: load theme from localstorage
+  theme: undefined,
 });
 export default useProcessContextState;
