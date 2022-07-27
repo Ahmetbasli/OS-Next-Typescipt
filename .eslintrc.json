@@ -43,7 +43,6 @@
     "max-lines": ["error", 80],
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
-    "import/no-extraneous-dependencies": ["error", { "packageDir": "." }],
     "import/extensions": [
       "error",
       "ignorePackages",
@@ -62,6 +61,7 @@
     "@typescript-eslint/no-var-requires": "off",
     "testing-library/render-result-naming-convention": "off",
     "react/function-component-definition": "off",
-    "react/require-default-props": "off"
+    "react/require-default-props": "off",
+    "import/no-extraneous-dependencies": ["off"]
   }
 }
