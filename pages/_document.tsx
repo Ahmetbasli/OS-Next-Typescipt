@@ -1,5 +1,5 @@
 import type { DocumentContext, DocumentInitialProps } from 'next/document';
-import Document, { Head, Html, Main, NextScript } from 'next/document';
+import Document from 'next/document';
 import withServerStyleSheet from 'utils/withServerStyleSheet';
 
 export default class MyDocument extends Document {
