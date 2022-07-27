@@ -1,11 +1,4 @@
 import type { SessionContextState } from 'types/contexts/Session';
 
-const useProcessContextState = (): SessionContextState => ({
-  theme: {
-    colors: {
-      primary: '',
-      windowBg: '',
-    },
-  },
-});
-export default useProcessContextState;
+const useSessionContextState = (): SessionContextState => ({});
+export default useSessionContextState;
