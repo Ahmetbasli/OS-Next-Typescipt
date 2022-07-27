@@ -1,10 +1,11 @@
 import Head from 'next/head';
+import packageInfo from 'package.json';
 import type { FC } from 'react';
 import type MetaDataProps from 'types/components/pages/MetaData';
 
 const MetaData: FC<MetaDataProps> = ({
-  description = 'os-nextjs ',
-  title = 'os clone',
+  description = packageInfo.description,
+  title = packageInfo.name,
 }) => (
   <Head>
     <title>{title}</title>

@@ -1,7 +1,7 @@
 {
   "name": "os-nextjs-typescript",
   "version": "1.0.0",
-  "description": "",
+  "description": "os-nextjs-typescript",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
