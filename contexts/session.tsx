@@ -4,16 +4,12 @@ import React, { createContext } from 'react';
 import type { SessionContextState } from 'types/contexts/Session';
 import { initialContextSessionState } from 'utils/initialContextstates';
 
-export const SessionContext = createContext<SessionContextState>(
+export const { Provider, Consumer } = createContext<SessionContextState>(
   initialContextSessionState
 );
 
 export const SessionProvider: FC<{ children: React.ReactNode }> = ({
   children,
-}) => (
-  <SessionContext.Provider value={useSessionContextState()}>
-    {children}
-  </SessionContext.Provider>
-);
+}) => <Provider value={useSessionContextState()}>{children}</Provider>;
 
-export const SessionConsumer = SessionContext.Consumer;
+export const SessionConsumer = Consumer;
