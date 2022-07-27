@@ -1,9 +1,8 @@
 import { useMemo } from 'react';
 import type { ProcessContextState, Processes } from 'types/contexts/Process';
-import processDirectory from 'utils/processDirectory';
 
 const useProcessContextState = (
-  startUpProcesses: Processes = processDirectory
+  startUpProcesses: Processes
 ): ProcessContextState => {
   const processes = useMemo(
     () => ({ processes: startUpProcesses }),
