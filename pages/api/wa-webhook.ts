@@ -44,7 +44,7 @@ export default async (req: NextApiRequest, res: NextApiResponse<Data>) => {
       return res.status(500).send({ name: 'Internal server error' });
     }
     const payload = req.body;
-    const signature = req.headers['X-hub-signature-256'];
+    const signature = req.headers['X-Hub-Signature-256'];
 
     await axios({
       method: 'post',
