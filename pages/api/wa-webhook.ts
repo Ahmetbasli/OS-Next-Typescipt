@@ -36,7 +36,7 @@ export default async (req: NextApiRequest, res: NextApiResponse<Data>) => {
   }
 
   if (req.method === 'POST') {
-    const body = JSON.parse(req.body);
+    const body = req.body;
     if (body.field !== 'messages') {
       return res.status(500).send({ name: 'Internal server error' });
     }
