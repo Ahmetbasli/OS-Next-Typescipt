@@ -40,9 +40,9 @@ export default async (req: NextApiRequest, res: NextApiResponse<Data>) => {
 
   if (req.method === 'POST') {
     const body = req.body;
-    if (body.field !== 'messages') {
-      return res.status(500).send({ name: 'Internal server error' });
-    }
+    // if (body.field !== 'messages') {
+    //   return res.status(500).send({ name: 'Internal server error' });
+    // }
     const payload = req.body;
     const signature = req.headers['X-Hub-Signature-256'];
 
