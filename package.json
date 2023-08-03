@@ -13,7 +13,6 @@
     "test:watch": "just --watch"
   },
   "lint-staged": {
-    "*.{js,ts,tsx}": "eslint --fix",
     "*.{js,scss,md,ts,tsx}": "prettier --write"
   },
   "repository": {
@@ -24,9 +23,12 @@
   "license": "MIT",
   "homepage": "https://github.com/Ahmetbasli/OS-NextJS-Typescript#readme",
   "dependencies": {
+    "axios": "^1.4.0",
+    "crypto": "^1.0.1",
     "next": "^12.1.4",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "react-is": "^18.2.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.4",
@@ -64,6 +66,7 @@
     "stylelint-config-recommended": "^7.0.0",
     "stylelint-config-sass-guidelines": "^9.0.1",
     "stylelint-config-styled-components": "^0.1.1",
-    "stylelint-processor-styled-components": "^1.10.0"
+    "stylelint-processor-styled-components": "^1.10.0",
+    "typescript": "^5.1.6"
   }
 }
