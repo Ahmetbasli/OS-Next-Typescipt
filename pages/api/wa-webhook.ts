@@ -24,7 +24,7 @@ function validateSignature(payload: any, receivedSignature: any) {
   return `sha256=${generatedSignature}` === receivedSignature;
 }
 
-export default (req: NextApiRequest, res: NextApiResponse<Data>) => {
+export default async (req: NextApiRequest, res: NextApiResponse<Data>) => {
   if (req.method === 'GET') {
     if (
       req.query['hub.mode'] === 'subscribe' &&
@@ -43,37 +43,32 @@ export default (req: NextApiRequest, res: NextApiResponse<Data>) => {
     const payload = req.body;
     const signature = req.headers['x-hub-signature-256'];
 
+    if (!validateSignature(payload, signature)) {
+      return res.status(403).send({ name: 'Signature mismatch' });
+    }
     // Here you should validate the payload signature
-    if (validateSignature(payload, signature)) {
-      axios({
-        method: 'post',
-        url: 'https://graph.facebook.com/v17.0/105057969351607/messages',
-        headers: {
-          Authorization: `Bearer ${ACCESS_TOKEN} `,
-          'Content-Type': 'application/json',
-        },
-        data: {
-          messaging_product: 'whatsapp',
-          to: '6285281788439',
-          type: 'template',
-          template: {
-            name: 'hello_world',
-            language: {
-              code: 'en_US',
-            },
+
+    await axios({
+      method: 'post',
+      url: 'https://graph.facebook.com/v17.0/105057969351607/messages',
+      headers: {
+        Authorization: `Bearer ${ACCESS_TOKEN} `,
+        'Content-Type': 'application/json',
+      },
+      data: {
+        messaging_product: 'whatsapp',
+        to: '6285281788439',
+        type: 'template',
+        template: {
+          name: 'hello_world',
+          language: {
+            code: 'en_US',
           },
         },
-      })
-        .then((response) => {
-          console.log('Response:', response.data);
-        })
-        .catch((error) => {
-          console.error('Error:', error);
-        });
+      },
+    });
 
-      return res.status(200).send({ name: 'OK' });
-    }
-    return res.status(403).send({ name: 'Signature mismatch' });
+    return res.status(200).send({ name: 'OK' });
   }
 
   // If neither GET nor POST
