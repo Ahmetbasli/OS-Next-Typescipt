@@ -48,6 +48,8 @@ export default async (req: NextApiRequest, res: NextApiResponse<Data>) => {
     }
     // Here you should validate the payload signature
 
+    console.log(body.field);
+
     await axios({
       method: 'post',
       url: 'https://graph.facebook.com/v17.0/105057969351607/messages',
