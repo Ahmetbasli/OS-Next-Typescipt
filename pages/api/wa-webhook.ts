@@ -8,14 +8,8 @@ type Data = {
   name: string;
 };
 
-const VERIFY_TOKEN = 'wa';
-const ACCESS_TOKEN =
-  'EAANZButv1TCIBOZCkW3raZC2ekxfySY072pQp9x6bCjbtB4JMx1PEo8uv56XzVRdvuyQvDJxVxFLJrTrKSzKMskZAuB9du7DZAsv2BbBr2y3AyGslhvNJR12l04ScxVKPIU5OhK4KY3ZBjhIyojGZBro9gkFexyqjiGmdDFX1IpOjjXFHPZCVKHc8WX44UZAhxg8OpttHnWl75QgIoIOh';
-const VERSION = 'v17.0';
-const PHONE_NUMBER_ID = '105057969351607';
-
 function validateSignature(payload: any, receivedSignature: any) {
-  const YOUR_APP_SECRET = VERIFY_TOKEN; // Replace with your App Secret
+  const YOUR_APP_SECRET = 'wa'; // Replace with your App Secret
   const generatedSignature = crypto
     .createHmac('sha256', YOUR_APP_SECRET)
     .update(JSON.stringify(payload))
@@ -28,7 +22,7 @@ export default (req: NextApiRequest, res: NextApiResponse<Data>) => {
   if (req.method === 'GET') {
     if (
       req.query['hub.mode'] === 'subscribe' &&
-      req.query['hub.verify_token'] === VERIFY_TOKEN
+      req.query['hub.verify_token'] === 'wa'
     ) {
       res.status(200).send(req.query['hub.challenge'] as any);
     } else {
