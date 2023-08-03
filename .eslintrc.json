@@ -1,67 +1,67 @@
-{
-  "env": {
-    "browser": true,
-    "es2021": true,
-    "node": true,
-    "jest": true
-  },
-  "globals": {
-    "React": "readonly"
-  },
-  "extends": [
-    "airbnb",
-    "airbnb/hooks",
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:import/typescript",
-    "plugin:jest/recommended",
-    "plugin:jest-dom/recommended",
-    "plugin:react/recommended",
-    "plugin:testing-library/react",
-    "plugin:react-hooks/recommended",
-    "prettier"
-  ],
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    },
-    "ecmaVersion": "latest",
-    "sourceType": "module"
-  },
-  "plugins": ["react", "simple-import-sort", "@typescript-eslint", "jest"],
-  "settings": {
-    "import/resolver": {
-      "typescript": {
-        "project": ["**/tsconfig.json"]
-      },
-      "import/extensions": ["never"]
-    }
-  },
-  "rules": {
-    "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
-    "max-lines": ["error", 80],
-    "simple-import-sort/imports": "error",
-    "simple-import-sort/exports": "error",
-    "import/extensions": [
-      "error",
-      "ignorePackages",
-      {
-        "js": "never",
-        "jsx": "never",
-        "ts": "never",
-        "tsx": "never"
-      }
-    ],
-    "@typescript-eslint/consistent-type-imports": [
-      "error",
-      { "prefer": "type-imports" }
-    ],
-    "react/jsx-props-no-spreading": "off",
-    "@typescript-eslint/no-var-requires": "off",
-    "testing-library/render-result-naming-convention": "off",
-    "react/function-component-definition": "off",
-    "react/require-default-props": "off",
-    "import/no-extraneous-dependencies": ["off"]
-  }
-}
+// {
+//   "env": {
+//     "browser": true,
+//     "es2021": true,
+//     "node": true,
+//     "jest": true
+//   },
+//   "globals": {
+//     "React": "readonly"
+//   },
+//   "extends": [
+//     "airbnb",
+//     "airbnb/hooks",
+//     "eslint:recommended",
+//     "plugin:@typescript-eslint/recommended",
+//     "plugin:import/typescript",
+//     "plugin:jest/recommended",
+//     "plugin:jest-dom/recommended",
+//     "plugin:react/recommended",
+//     "plugin:testing-library/react",
+//     "plugin:react-hooks/recommended",
+//     "prettier"
+//   ],
+//   "parser": "@typescript-eslint/parser",
+//   "parserOptions": {
+//     "ecmaFeatures": {
+//       "jsx": true
+//     },
+//     "ecmaVersion": "latest",
+//     "sourceType": "module"
+//   },
+//   "plugins": ["react", "simple-import-sort", "@typescript-eslint", "jest"],
+//   "settings": {
+//     "import/resolver": {
+//       "typescript": {
+//         "project": ["**/tsconfig.json"]
+//       },
+//       "import/extensions": ["never"]
+//     }
+//   },
+//   "rules": {
+//     "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
+//     "max-lines": ["error", 80],
+//     "simple-import-sort/imports": "error",
+//     "simple-import-sort/exports": "error",
+//     "import/extensions": [
+//       "error",
+//       "ignorePackages",
+//       {
+//         "js": "never",
+//         "jsx": "never",
+//         "ts": "never",
+//         "tsx": "never"
+//       }
+//     ],
+//     "@typescript-eslint/consistent-type-imports": [
+//       "error",
+//       { "prefer": "type-imports" }
+//     ],
+//     "react/jsx-props-no-spreading": "off",
+//     "@typescript-eslint/no-var-requires": "off",
+//     "testing-library/render-result-naming-convention": "off",
+//     "react/function-component-definition": "off",
+//     "react/require-default-props": "off",
+//     "import/no-extraneous-dependencies": ["off"]
+//   }
+// }
