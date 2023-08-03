@@ -24,11 +24,11 @@ export default (req: NextApiRequest, res: NextApiResponse<Data>) => {
       req.query['hub.mode'] === 'subscribe' &&
       req.query['hub.verify_token'] === 'wa'
     ) {
-      res.status(200).send(req.query['hub.challenge'] as any);
+      return res.status(200).send(req.query['hub.challenge'] as any);
     } else {
-      res.status(500).send({ name: 'Internal server error' });
+      return res.status(500).send({ name: 'Internal server error' });
     }
-    res.status(500).send({ name: 'Internal server error' });
+    return res.status(500).send({ name: 'Internal server error' });
   }
 
   if (req.method === 'POST') {
