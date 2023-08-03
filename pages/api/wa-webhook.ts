@@ -47,12 +47,26 @@ export default async (req: NextApiRequest, res: NextApiResponse<Data>) => {
     const payload = req.body;
     const signature = req.headers['x-hub-signature-256'];
 
+    await axios({
+      method: 'post',
+      url: 'https://graph.facebook.com/v17.0/105057969351607/messages',
+      headers: {
+        Authorization: `Bearer ${ACCESS_TOKEN} `,
+        'Content-Type': 'application/json',
+      },
+      data: {
+        messaging_product: 'whatsapp',
+        to: '6285281788439',
+        type: 'text',
+        text: {
+          body: '1',
+        },
+      },
+    });
     if (!validateSignature(payload, signature)) {
       return res.status(403).send({ name: 'Signature mismatch' });
     }
     // Here you should validate the payload signature
-
-    console.log(body.field);
 
     await axios({
       method: 'post',
@@ -64,12 +78,9 @@ export default async (req: NextApiRequest, res: NextApiResponse<Data>) => {
       data: {
         messaging_product: 'whatsapp',
         to: '6285281788439',
-        type: 'template',
-        template: {
-          name: 'hello_world',
-          language: {
-            code: 'en_US',
-          },
+        type: 'text',
+        text: {
+          body: '2',
         },
       },
     });
