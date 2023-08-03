@@ -25,8 +25,6 @@ function validateSignature(payload: any, receivedSignature: any) {
 }
 
 export default (req: NextApiRequest, res: NextApiResponse<Data>) => {
-  console.log('jkfdjsfk');
-
   if (req.method === 'GET') {
     if (
       req.query['hub.mode'] === 'subscribe' &&
