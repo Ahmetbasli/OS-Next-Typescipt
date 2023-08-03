@@ -40,26 +40,6 @@ export default async (req: NextApiRequest, res: NextApiResponse<Data>) => {
   }
 
   if (req.method === 'POST') {
-    await axios({
-      method: 'post',
-      url: 'https://graph.facebook.com/v17.0/105057969351607/messages',
-      headers: {
-        Authorization: `Bearer ${ACCESS_TOKEN} `,
-        'Content-Type': 'application/json',
-      },
-      data: {
-        messaging_product: 'whatsapp',
-        to: '6285281788439',
-        type: 'template',
-        template: {
-          name: 'hello_world',
-          language: {
-            code: 'en_US',
-          },
-        },
-      },
-    });
-
     const body = req.body;
     if (body.field !== 'messages') {
       return res.status(500).send({ name: 'Internal server error' });
