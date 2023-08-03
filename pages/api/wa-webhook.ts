@@ -1,6 +1,5 @@
 /* eslint-disable */
 import axios from 'axios';
-import { access } from 'fs';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 const crypto = require('crypto');
@@ -45,7 +44,7 @@ export default async (req: NextApiRequest, res: NextApiResponse<Data>) => {
       return res.status(500).send({ name: 'Internal server error' });
     }
     const payload = req.body;
-    const signature = req.headers['x-hub-signature-256'];
+    const signature = req.headers['X-hub-signature-256'];
 
     await axios({
       method: 'post',
