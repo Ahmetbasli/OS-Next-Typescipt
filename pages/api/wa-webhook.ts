@@ -28,7 +28,7 @@ export default async (req: NextApiRequest, res: NextApiResponse<Data>) => {
   if (req.method === 'GET') {
     if (
       req.query['hub.mode'] === 'subscribe' &&
-      req.query['hub.verify_token'] === 'VERIFY_TOKEN'
+      req.query['hub.verify_token'] === VERIFY_TOKEN
     ) {
       return res.status(200).send(req.query['hub.challenge'] as any);
     }
