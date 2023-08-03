@@ -36,6 +36,9 @@ export default async (req: NextApiRequest, res: NextApiResponse<Data>) => {
   }
 
   if (req.method === 'POST') {
+    if (typeof req.body !== 'object') {
+      return res.status(400).send({ name: 'Invalid request body' });
+    }
     const body = req.body;
     if (body.field !== 'messages') {
       return res.status(500).send({ name: 'Internal server error' });
