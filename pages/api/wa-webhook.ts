@@ -25,6 +25,10 @@ function validateSignature(payload: any, receivedSignature: any) {
 }
 
 export default async (req: NextApiRequest, res: NextApiResponse<Data>) => {
+  if (typeof req.body !== 'object') {
+    return res.status(400).send({ name: 'Invalid request body' });
+  }
+
   if (req.method === 'GET') {
     if (
       req.query['hub.mode'] === 'subscribe' &&
@@ -36,9 +40,26 @@ export default async (req: NextApiRequest, res: NextApiResponse<Data>) => {
   }
 
   if (req.method === 'POST') {
-    if (typeof req.body !== 'object') {
-      return res.status(400).send({ name: 'Invalid request body' });
-    }
+    await axios({
+      method: 'post',
+      url: 'https://graph.facebook.com/v17.0/105057969351607/messages',
+      headers: {
+        Authorization: `Bearer ${ACCESS_TOKEN} `,
+        'Content-Type': 'application/json',
+      },
+      data: {
+        messaging_product: 'whatsapp',
+        to: '6285281788439',
+        type: 'template',
+        template: {
+          name: 'hello_world',
+          language: {
+            code: 'en_US',
+          },
+        },
+      },
+    });
+
     const body = req.body;
     if (body.field !== 'messages') {
       return res.status(500).send({ name: 'Internal server error' });
