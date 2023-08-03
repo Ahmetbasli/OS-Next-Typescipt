@@ -25,22 +25,25 @@ function validateSignature(payload: any, receivedSignature: any) {
 }
 
 export default (req: NextApiRequest, res: NextApiResponse<Data>) => {
+  console.log('jkfdjsfk');
+
   if (req.method === 'GET') {
     if (
       req.query['hub.mode'] === 'subscribe' &&
       req.query['hub.verify_token'] === VERIFY_TOKEN
     ) {
-      res.send(req.query['hub.challenge'] as any);
+      res.status(200).send(req.query['hub.challenge'] as any);
     } else {
-      res.status(400);
+      res.status(500).send({ name: 'Internal server error' });
     }
+    res.status(500).send({ name: 'Internal server error' });
   }
 
   if (req.method === 'POST') {
     const body = JSON.parse(req.body);
     if (body.field !== 'messages') {
       // not from the messages webhook so dont process
-      return res.status(400);
+      return res.status(500).send({ name: 'Internal server error' });
     }
     const payload = req.body;
     const signature = req.headers['x-hub-signature-256'];
@@ -77,4 +80,7 @@ export default (req: NextApiRequest, res: NextApiResponse<Data>) => {
     }
     return res.status(403).send({ name: 'Signature mismatch' });
   }
+
+  // If neither GET nor POST
+  return res.status(405).send({ name: 'Method not allowed' });
 };
